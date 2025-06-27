@@ -1,0 +1,12 @@
+{
+  "scripts": {
+    "lint": "bun run codeformat check",
+    "format": "bun run codeformat fix",
+    "preview": "php -S localhost:8080 previewing/preview.php",
+    "prepare": "bun --bun x husky"
+  },
+  "devDependencies": {
+    "@averay/codeformat": "^0.2.6",
+    "husky": "^9.1.7"
+  }
+}

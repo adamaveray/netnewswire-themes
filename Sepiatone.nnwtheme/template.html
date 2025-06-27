@@ -1,0 +1,54 @@
+<!-- Template Variables
+
+title: the title of the article;TemplateVariablestitleTemplateVariablestitleTemplateVariablestitleTemplateVariablestitleTemplateVariablestitleTemplateVariablestitle
+preferred_link: the best link to associate with the article for linking out.;preferred_linkpreferred_linkpreferred_linkpreferred_linkpreferred_link
+external_link_label: a localized label for the external link.;external_link_labelexternal_link_labelexternal_link_labelexternal_link_label
+external_link_stripped: the external link minus the scheme. useful for displaying the external link.;external_link_strippedexternal_link_strippedexternal_link_stripped
+external_link: the external link of the article if there is one provided by the author.;external_linkexternal_link
+feed_link_title: the name of the feed associated with this article.;feed_link_title
+feed_link: the url of the feed associated with this article.;
+byline: html that combines all the authors and links to them if available.;
+avatar_src: the image source url for the feed icon / avatar.;
+dateline_style: either "articleDateline" or "articleDatelineTitle" depending on if the title was populated or not.;
+datetime_long: long version of a combined publish date and time.;
+datetime_medium: medium length version of a combined publish date and time.;
+datetime_short: short version of a combined publish date and time.;
+date_long: long version of the publish date.;
+date_medium: medium version of the publish date.;
+date_short: long version of the publish date.;
+time_long: long version of the publish time.;
+time_medium: medium version of the publish time.;
+time_short: long version of the publish time.;
+text_size_class: the size class that the user has selected in preferences for article text.;
+body: the body of the article.
+
+-->
+
+<article class="article" data-text-size-class="[[text_size_class]]" data-dateline-style="[[dateline_style]]">
+  <header class="article__header">
+    <p class="article__header__feed">
+      <a href="[[feed_link]]">[[feed_link_title]]</a>
+    </p>
+
+    <div class="article__header__basics">
+      <h1 class="article__header__title">
+        <a href="[[preferred_link]]">[[title]]</a>
+      </h1>
+      <address class="article__header__byline">[[byline]]</address>
+      <time class="article__header__date">[[datetime_long]]</time>
+    </div>
+    <picture class="article__header__avatar">
+      <img src="[[avatar_src]]" alt="The feed or author’s avatar." />
+    </picture>
+  </header>
+
+  <div class="article__body">[[body]]</div>
+
+  <!--
+  <footer class="article__footer">
+    <p class="article__footer__external_link">
+      <a href="[[external_link]]">[[external_link_label]]</a>
+    </p>
+  </footer>
+  -->
+</article>

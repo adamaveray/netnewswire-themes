@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Name</key>
+	<string>Sepiatone</string>
+	<key>ThemeIdentifier</key>
+	<string>au.adamaveray.netnewswire.sepiatone</string>
+	<key>CreatorHomePage</key>
+	<string>https://adamaveray.au/</string>
+	<key>CreatorName</key>
+	<string>Adam Averay</string>
+	<key>Version</key>
+	<integer>1</integer>
+</dict>
+</plist>
