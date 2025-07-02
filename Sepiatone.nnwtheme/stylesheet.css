@@ -125,7 +125,7 @@ body {
     border-radius: var(--metrics__image-radius);
   }
 
-  p:has(> :is(img, video, iframe, svg):only-child) {
+  :is(p):has(> :is(img, video, iframe, svg):only-child) {
     margin-block: 0;
   }
 
