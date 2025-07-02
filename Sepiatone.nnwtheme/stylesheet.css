@@ -154,6 +154,12 @@ body {
         aspect-ratio: 16 / 9;
       }
     }
+
+    /* Increase code embed heights */
+    &:where([src^='https://codepen.io/'])
+    {
+      min-block-size: min(40rem, 100svb);
+    }
   }
 
   /* Block elements */
