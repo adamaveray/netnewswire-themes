@@ -90,32 +90,31 @@ body {
   text-wrap: pretty;
   margin-trim: block; /* stylelint-disable-line declaration-property-value-no-unknown -- Not yet supported. */
 
-  /* Images */
-  img {
+  /* Visual media */
+  :is(img, video, iframe) {
     block-size: auto;
     max-inline-size: 100%;
+    border: none;
 
     &:not([href*='.png']) {
       background: var(--color__foreground--secondary);
     }
   }
 
-  > img,
+  > :is(img, video, iframe),
   > a > img,
-  :is(div, figure, picture) > img,
+  :is(div, figure, picture) > :is(img, video, iframe),
   :is(div, figure, picture) > a > img,
-  p > img:only-child,
+  p > :is(img, video, iframe):only-child,
   p > a:only-child > img:only-child {
     display: block;
-    block-size: auto;
     inline-size: auto;
-    max-inline-size: 100%;
     margin-block: var(--metrics__block-margin);
     margin-inline: auto;
     border-radius: var(--metrics__image-radius);
   }
 
-  p:has(> img:only-child) {
+  p:has(> :is(img, video, iframe):only-child) {
     margin-block: 0;
   }
 
@@ -126,12 +125,16 @@ body {
     display: block;
   }
 
+  iframe {
+    inline-size: 100%;
+  }
+
   /* Block elements */
   &,
   & > div,
   & > div > a,
   & > a > div {
-    > :where(ul, li, p, img, picture, figure, iframe, blockquote) {
+    > :where(ul, li, p, img, video, picture, figure, iframe, blockquote) {
       margin-block: var(--metrics__block-margin);
 
       /* Remove surrounding <br> elements */

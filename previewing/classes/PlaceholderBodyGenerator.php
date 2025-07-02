@@ -11,6 +11,8 @@ final readonly class PlaceholderBodyGenerator
     'orderedList',
     'unorderedList',
     'image',
+    'video',
+    'iframe',
     'br',
     'hr',
   ];
@@ -34,6 +36,8 @@ final readonly class PlaceholderBodyGenerator
         'orderedList' => $this->buildList(type: 'ordered', items: \random_int(2, 5)),
         'unorderedList' => $this->buildList(type: 'unordered', items: \random_int(2, 5)),
         'image' => $this->buildImage(),
+        'video' => $this->buildVideo(),
+        'iframe' => $this->buildIFrame(),
         'br' => '<br />',
         'hr' => '<hr />',
       };
@@ -105,5 +109,24 @@ final readonly class PlaceholderBodyGenerator
     $height = \random_int(400, 800);
     $url = 'https://picsum.photos/' . \urlencode((string) $width) . '/' . \urlencode((string) $height);
     return '<img src="' . e($url) . '" alt="(Placeholder)" />';
+  }
+
+  private function buildVideo(): string
+  {
+    $width = \random_int(500, 1500);
+    $height = \random_int(400, 800);
+    $url = 'https://picsum.photos/' . \urlencode((string) $width) . '/' . \urlencode((string) $height);
+    return \sprintf(
+      '<video poster="%s" width="%s" height="%s"></video>',
+      e($url),
+      e((string) $width),
+      e((string) $height),
+    );
+  }
+
+  private function buildIFrame(): string
+  {
+    $url = 'https://www.example.com/';
+    return '<iframe src="' . e($url) . '"></iframe>';
   }
 }
