@@ -20,7 +20,7 @@ $replacements = require __DIR__ . '/previewContent.php';
   <meta charset="utf-8" />
   <title><?= e('NetNewsWire "' . $theme->name . '" Theme Preview') ?></title>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <style><?= \str_replace('<', '&lt;', $theme->loadResource('stylesheet.css')) ?></style>
+  <style><?= e($theme->loadResource('stylesheet.css'), type: 'css') ?></style>
 </head>
 <body>
   <?= $theme->template->render($replacements) ?>

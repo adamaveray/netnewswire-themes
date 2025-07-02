@@ -1,16 +1,24 @@
 <?php
 declare(strict_types=1);
 
+require_once __DIR__ . '/classes/Resources.php';
+
 require_once __DIR__ . '/classes/TextSize.php';
+require_once __DIR__ . '/classes/Library.php';
 require_once __DIR__ . '/classes/PlaceholderBodyGenerator.php';
 require_once __DIR__ . '/classes/PlaceholderText.php';
 require_once __DIR__ . '/classes/Template.php';
 require_once __DIR__ . '/classes/TemplateHtmlString.php';
 require_once __DIR__ . '/classes/Theme.php';
 
-function e(string $string): string
+function e(string $string, string $type = 'html'): string
 {
-  return \htmlspecialchars($string, \ENT_QUOTES | \ENT_HTML5);
+  return match ($type) {
+    'html' => \htmlspecialchars($string, \ENT_QUOTES | \ENT_HTML5),
+    'css' => \str_replace('<', '&lt;', $string),
+    'js' => \preg_replace('~</script\b~', '<\\/script', $string),
+    default => throw new \InvalidArgumentException('Invalid type "' . $type . '".'),
+  };
 }
 
 /**
