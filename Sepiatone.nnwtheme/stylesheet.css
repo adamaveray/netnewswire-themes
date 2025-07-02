@@ -210,7 +210,7 @@ code {
       content: '';
       display: block;
       position: absolute;
-      inset-block: 0;
+      inset-block: 0.3em 0.15em;
       inset-inline-start: 0;
       inline-size: var(--rule-width);
       background: var(--color__foreground--separators);
