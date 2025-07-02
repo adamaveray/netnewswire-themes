@@ -12,6 +12,7 @@ final readonly class PlaceholderBodyGenerator
     'unorderedList',
     'image',
     'br',
+    'hr',
   ];
 
   public function __construct(private PlaceholderText $placeholderText) {}
@@ -34,6 +35,7 @@ final readonly class PlaceholderBodyGenerator
         'unorderedList' => $this->buildList(type: 'unordered', items: \random_int(2, 5)),
         'image' => $this->buildImage(),
         'br' => '<br />',
+        'hr' => '<hr />',
       };
     }
 

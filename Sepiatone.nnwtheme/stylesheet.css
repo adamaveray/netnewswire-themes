@@ -233,6 +233,16 @@ code {
       }
     }
   }
+
+  /* Dividers */
+  hr {
+    block-size: 1px;
+    inline-size: 100%;
+    margin-block: calc(var(--metrics__block-margin) * 2);
+    border: none;
+    background: var(--color__foreground--separators);
+    color: transparent;
+  }
 }
 
 /* Links */
