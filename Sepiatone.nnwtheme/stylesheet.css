@@ -102,21 +102,21 @@ body {
   margin-trim: block; /* stylelint-disable-line declaration-property-value-no-unknown -- Not yet supported. */
 
   /* Visual media */
-  :is(img, video, iframe) {
+  :is(img, video, iframe, svg) {
     block-size: auto;
     max-inline-size: 100%;
     border: none;
 
-    &:not([href*='.png']) {
+    &:not([href*='.png'], svg) {
       background: var(--color__foreground--secondary);
     }
   }
 
-  > :is(img, video, iframe),
+  > :is(img, video, iframe, svg),
   > a > img,
-  :is(div, figure, picture) > :is(img, video, iframe),
+  :is(div, figure, picture) > :is(img, video, iframe, svg),
   :is(div, figure, picture) > a > img,
-  p > :is(img, video, iframe):only-child,
+  p > :is(img, video, iframe, svg):only-child,
   p > a:only-child > img:only-child {
     display: block;
     inline-size: auto;
@@ -125,14 +125,14 @@ body {
     border-radius: var(--metrics__image-radius);
   }
 
-  p:has(> :is(img, video, iframe):only-child) {
+  p:has(> :is(img, video, iframe, svg):only-child) {
     margin-block: 0;
   }
 
   /* Linked images */
-  > a:has(> img),
-  :is(div, figure, picture) > a:has(> img),
-  p > a:only-child:has(> img:only-child) {
+  > a:has(> :is(img, svg)),
+  :is(div, figure, picture) > a:has(> :is(img, svg)),
+  p > a:only-child:has(> :is(img, svg):only-child) {
     display: block;
   }
 
@@ -145,7 +145,7 @@ body {
   & > div,
   & > div > a,
   & > a > div {
-    > :where(ul, li, p, img, video, picture, figure, iframe, blockquote) {
+    > :where(ul, li, p, img, video, picture, figure, iframe, svg, blockquote) {
       margin-block: var(--metrics__block-margin);
 
       /* Remove surrounding <br> elements */
