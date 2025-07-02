@@ -6,6 +6,8 @@ $placeholderText = cache('placeholderText', new \DateInterval('PT10M'), Placehol
 
 $bodyGenerator = new PlaceholderBodyGenerator($placeholderText);
 
+$textSize ??= TextSize::Medium;
+
 return [
   // The title of the article
   'title' => \ucfirst($placeholderText->words(\random_int(4, 10))),
@@ -53,7 +55,7 @@ return [
   'time_short' => formatDateTime($now, 'time', \IntlDateFormatter::SHORT),
 
   // The size class that the user has selected in Preferences for article text.
-  'text_size_class' => 'medium',
+  'text_size_class' => $textSize->value,
   // The body of the article.
   'body' => $bodyGenerator->generate(),
   //  'body' => Template::safeString(\file_get_contents(__DIR__ . '/test.html')),

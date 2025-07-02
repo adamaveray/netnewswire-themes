@@ -1,6 +1,7 @@
 <?php
 declare(strict_types=1);
 
+require_once __DIR__ . '/classes/TextSize.php';
 require_once __DIR__ . '/classes/PlaceholderBodyGenerator.php';
 require_once __DIR__ . '/classes/PlaceholderText.php';
 require_once __DIR__ . '/classes/Template.php';

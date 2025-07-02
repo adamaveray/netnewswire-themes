@@ -5,6 +5,7 @@ require_once __DIR__ . '/lib.php';
 
 try {
   $theme = new Theme($_GET['theme'] ?? Theme::getDefaultThemeName());
+  $textSize = TextSize::from($_GET['textSize'] ?? TextSize::Medium->value);
 } catch (\InvalidArgumentException $exception) {
   \header('content-type: text/plain', response_code: 404);
   echo $exception->getMessage();
