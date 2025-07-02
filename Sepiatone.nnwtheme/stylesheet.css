@@ -146,9 +146,13 @@ body {
     /* Set default aspect ratio for common embed types */
     &:where(
       [src^="https://www.youtube.com/embed/"],
+      [src^="//www.youtube.com/embed/"],
       [src^="https://www.youtube-nocookie.com/embed/"],
+      [src^="//www.youtube-nocookie.com/embed/"],
       [src^="https://player.vimeo.com/"],
-      [src^="https://videopress.com/embed/"]
+      [src^="//player.vimeo.com/"],
+      [src^="https://videopress.com/embed/"],
+      [src^="//videopress.com/embed/"]
     ) {
       &:not([style*='aspect-ratio']) {
         aspect-ratio: 16 / 9;
@@ -156,8 +160,10 @@ body {
     }
 
     /* Increase code embed heights */
-    &:where([src^='https://codepen.io/'])
-    {
+    &:where(
+      [src^='https://codepen.io/'],
+      [src^='//codepen.io/']
+    ) {
       min-block-size: min(40rem, 100svb);
     }
   }
