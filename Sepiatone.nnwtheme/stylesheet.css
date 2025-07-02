@@ -9,6 +9,13 @@
   /* Secondary */
   --color__background--secondary: light-dark(rgb(255 255 255 / 65%), rgb(0 0 0 / 65%));
   --color__foreground--secondary: light-dark(#796958, #a8a8a8);
+  /* Overlays */
+  --color__background--overlay: light-dark(
+    color-mix(in srgb, var(--color__background) 50%, #fff),
+    color-mix(in srgb, var(--color__background) 50%, #000)
+  );
+  --color__foreground--overlay: var(--color__foreground);
+  --color__shadow--overlay: light-dark(rgb(0 0 0 / 10%), transparent);
   /* Other contexts */
   --color__foreground--links: light-dark(#c19524, #77c5f5);
   --color__foreground--separators: light-dark(#cdc3b5, #3f3f3f);
@@ -283,18 +290,28 @@ a.footnote {
   text-decoration: none;
 }
 
-/*
-a.footnote:any-link,
-.newsfoot-footnote-popover + a.footnote:hover {
-	background: #FFEC3D66;
-	font-weight: 600;
-	color: var(--text-color);
+.newsfoot-footnote-popover {
+  padding: 0;
+
+  .newsfoot-footnote-popover-inner,
+  .newsfoot-footnote-popover-arrow {
+    background: var(--color__background--overlay);
+    color: var(--color__foreground--overlay);
+  }
+
+  .newsfoot-footnote-popover-inner {
+    box-sizing: border-box;
+    inline-size: calc(var(--metrics__max-width) + var(--metrics__block-margin));
+    max-inline-size: 100%;
+    margin-inline: auto;
+    border-radius: var(--metrics__image-radius);
+    box-shadow: 0 0.2em 0.6em var(--color__shadow--overlay);
+    line-height: 1.65;
+  }
+  .newsfoot-footnote-popover-arrow {
+    z-index: 2;
+  }
 }
-a.footnote:hover,
-.newsfoot-footnote-popover + a.footnote {
-	background: var(--hover-yellow);
-}
-*/
 
 /* Invalid markup */
 :where(ul, li) > br {
