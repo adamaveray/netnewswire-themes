@@ -137,7 +137,11 @@ body {
   }
 
   iframe {
-    inline-size: 100%;
+    &,
+    div > &,
+    p > &:only-child {
+      inline-size: 100%;
+    }
   }
 
   /* Block elements */
