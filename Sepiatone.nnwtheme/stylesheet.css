@@ -19,6 +19,8 @@
   /* Other contexts */
   --color__foreground--links: light-dark(#c19524, #77c5f5);
   --color__foreground--separators: light-dark(#cdc3b5, #3f3f3f);
+
+  color-scheme: light dark;
 }
 
 /* "Reset" */
