@@ -58,5 +58,4 @@ return [
   'text_size_class' => $textSize->value,
   // The body of the article.
   'body' => $bodyGenerator->generate(),
-  //  'body' => Template::safeString(\file_get_contents(__DIR__ . '/test.html')),
 ];
