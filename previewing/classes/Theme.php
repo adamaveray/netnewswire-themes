@@ -3,8 +3,8 @@ declare(strict_types=1);
 
 final readonly class Theme extends Resources
 {
-  private const THEMES_DIRECTORY = __DIR__ . '/../..';
-  private const THEME_EXTENSION = 'nnwtheme';
+  private const string THEMES_DIRECTORY = __DIR__ . '/../..';
+  private const string THEME_EXTENSION = 'nnwtheme';
 
   public Template $template;
 

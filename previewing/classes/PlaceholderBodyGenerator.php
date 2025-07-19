@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 final readonly class PlaceholderBodyGenerator
 {
-  private const SECTIONS = [
+  private const array SECTIONS = [
     'heading',
     'paragraphs',
     'pseudoParagraphs',
