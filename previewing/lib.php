@@ -54,7 +54,7 @@ function cache(string $id, \DateInterval $duration, callable $generator): mixed
   }
 
   $path = $cacheDir . '/' . $id . '.json';
-  $expiry = (new \DateTimeImmutable())->sub($duration);
+  $expiry = new \DateTimeImmutable()->sub($duration);
   $isValid = \file_exists($path) && \filemtime($path) >= $expiry->getTimestamp();
   if ($isValid) {
     $result = \unserialize(\file_get_contents($path), ['allowed_classes' => true]);
