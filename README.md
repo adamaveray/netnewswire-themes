@@ -4,7 +4,7 @@ Custom themes for [NetNewsWire](https://netnewswire.com).
 
 ## Themes
 
-- **[Sepiatone](./Sepiatone.nnwtheme):** A near-complete clone of iOS 18 Safari’s Reader mode with sepia colours and the New York typefaces selected.
+- **[Sepiatone](./Sepiatone.nnwtheme):** A near-complete clone of iOS 18 Safari’s Reader mode with sepia colours and the New York typefaces selected, with increased dark mode contrast.
 
 ## Utilities
 

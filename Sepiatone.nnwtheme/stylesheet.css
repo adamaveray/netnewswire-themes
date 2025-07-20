@@ -4,8 +4,8 @@
   --metrics__block-margin: 1.2em;
 
   /* Primary */
-  --color__background: light-dark(#f6f1e3, #121212);
-  --color__foreground: light-dark(#4a3527, #b0b0b0);
+  --color__background: light-dark(#f6f1e3, #000);
+  --color__foreground: light-dark(#4a3527, #dadada);
   /* Secondary */
   --color__background--secondary: light-dark(rgb(255 255 255 / 65%), rgb(0 0 0 / 65%));
   --color__foreground--secondary: light-dark(#796958, #a8a8a8);
