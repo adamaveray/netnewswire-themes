@@ -16,6 +16,7 @@ final readonly class PlaceholderBodyGenerator
     'br',
     'hr',
     'pre',
+    'details',
   ];
 
   public function __construct(private PlaceholderText $placeholderText) {}
@@ -42,6 +43,7 @@ final readonly class PlaceholderBodyGenerator
         'br' => '<br />',
         'hr' => '<hr />',
         'pre' => $this->buildPre(),
+        'details' => $this->buildDetails(),
       };
     }
 
@@ -136,5 +138,12 @@ final readonly class PlaceholderBodyGenerator
   {
     $content = $this->placeholderText->paragraphs(3);
     return \sprintf('<pre>%s</pre>', e($content));
+  }
+
+  private function buildDetails(): string
+  {
+    $summary = \ucfirst($this->placeholderText->words(\random_int(1, 5)));
+    $content = $this->buildParagraphs(3, style: 'html');
+    return \sprintf('<details><summary>%s</summary>%s</details>', e($summary), $content);
   }
 }
