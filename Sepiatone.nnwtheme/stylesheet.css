@@ -144,6 +144,10 @@ body {
     div > &,
     p > &:only-child {
       inline-size: 100%;
+
+      &:not([style*='height'], [style*='aspect-ratio']) {
+        min-block-size: 50cqb;
+      }
     }
 
     /* Set default aspect ratio for common embed types */
