@@ -2,6 +2,7 @@
   --metrics__max-width: 700px;
   --metrics__image-radius: 0.2em;
   --metrics__block-margin: 1.2em;
+  --metrics__container-padding: 0.6rem;
 
   /* Primary */
   --color__background: light-dark(#f6f1e3, #000);
@@ -180,7 +181,7 @@ body {
   & > div,
   & > div > a,
   & > a > div {
-    > :where(ul, li, p, img, video, picture, figure, iframe, svg, blockquote) {
+    > :where(ul, li, p, img, video, picture, figure, iframe, svg, blockquote, details) {
       margin-block: var(--metrics__block-margin);
 
       /* Remove surrounding <br> elements */
@@ -256,7 +257,7 @@ code {
   pre {
     box-sizing: border-box;
     max-inline-size: 100%;
-    padding: 0.6em;
+    padding: var(--metrics__container-padding);
     overflow-x: auto;
     border-radius: var(--metrics__image-radius);
     background: var(--color__background--secondary);
@@ -292,6 +293,25 @@ code {
     border: none;
     background: var(--color__foreground--separators);
     color: transparent;
+  }
+
+  /* Details */
+  details {
+    padding: var(--metrics__container-padding);
+    border-radius: var(--metrics__image-radius);
+    background: var(--color__background--secondary);
+
+    summary {
+      cursor: pointer;
+    }
+
+    &[open]::details-content {
+      margin-block-start: var(--metrics__container-padding);
+      padding-block-start: var(--metrics__container-padding);
+      border-block-start: 1px solid var(--color__foreground--separators);
+      font-size: 0.9em;
+      margin-trim: block; /* stylelint-disable-line declaration-property-value-no-unknown -- Not yet supported. */
+    }
   }
 }
 
