@@ -255,6 +255,7 @@ code {
     overflow-x: auto;
     border-radius: var(--metrics__image-radius);
     background: var(--color__background--secondary);
+    font-size: 0.85em;
 
     > code {
       display: block;
