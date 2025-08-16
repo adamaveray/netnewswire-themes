@@ -15,6 +15,7 @@ final readonly class PlaceholderBodyGenerator
     'iframe',
     'br',
     'hr',
+    'pre',
   ];
 
   public function __construct(private PlaceholderText $placeholderText) {}
@@ -40,6 +41,7 @@ final readonly class PlaceholderBodyGenerator
         'iframe' => $this->buildIFrame(),
         'br' => '<br />',
         'hr' => '<hr />',
+        'pre' => $this->buildPre(),
       };
     }
 
@@ -128,5 +130,11 @@ final readonly class PlaceholderBodyGenerator
   {
     $url = 'https://www.example.com/';
     return '<iframe src="' . e($url) . '"></iframe>';
+  }
+
+  private function buildPre(): string
+  {
+    $content = $this->placeholderText->paragraphs(3);
+    return \sprintf('<pre>%s</pre>', e($content));
   }
 }
