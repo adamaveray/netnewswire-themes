@@ -1,3 +1,7 @@
+**This repository has been migrated to Codeberg: [codeberg.org/adamaveray/netnewswire-themes](https://codeberg.org/adamaveray/netnewswire-themes)**
+
+---
+
 # NetNewsWire Themes
 
 Custom themes for [NetNewsWire](https://netnewswire.com).
